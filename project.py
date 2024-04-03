@@ -67,5 +67,20 @@ def main():
             else:
                 break
 
+        # verification of the correct guess
+        if guess_letter in correct_letters or guess_letter in wrong_letters:
+            print("you've already guessed this letter")
+        elif guess_letter not in letters_in_word:
+            lives -= 1
+            print(f'the letter {guess_letter} is not in the word! Lives: {lives}')
+            print(HANGMAN[lives])
+            wrong_letters.append(guess_letter)
+            if lives == 0:
+                break
+        else:
+            print(f'good one! the letter {guess_letter} is in the word!')
+            correct_letters.append(guess_letter)
+        print_hangman_word(word, correct_letters)
+
 if __name__ == '__main__':
     main()
