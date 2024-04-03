@@ -43,6 +43,30 @@ def print_hangman_word(word, letters=[]):
             print('_', end='')
     print()
 
+def game_over(lives):
+    if lives == 0:
+        print('''
+ _____                        _____                
+|  __ \\                      |  _  |               
+| |  \\/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
+| | __ / _` | '_ ` _ \\ / _ \\ | | | \\ \\ / / _ \\ '__|
+| |_\\ \\ (_| | | | | | |  __/ \\ \\_/ /\\ V /  __/ |   
+ \\____/\\__,_|_| |_| |_|\\___|  \\___/  \\_/ \\___|_|   
+                                                   
+                                                   ''')
+        print("You've lost...")
+    else:
+        print('''
+
+__   __                     _       _ _ _ 
+\ \ / /__  _   _  __      _(_)_ __ | | | |
+ \ V / _ \| | | | \ \ /\ / / | '_ \| | | |
+  | | (_) | |_| |  \ V  V /| | | | |_|_|_|
+  |_|\___/ \__,_|   \_/\_/ |_|_| |_(_|_|_)
+
+                                          
+                                          ''')
+
 
 def main():
     word = random.choice(WORDS)
@@ -81,6 +105,8 @@ def main():
             print(f'good one! the letter {guess_letter} is in the word!')
             correct_letters.append(guess_letter)
         print_hangman_word(word, correct_letters)
+
+    game_over(lives)
 
 if __name__ == '__main__':
     main()
