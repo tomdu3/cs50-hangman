@@ -29,6 +29,3 @@ def hangman_import():
     return {key:value for key, value in hangman.items()}
 
 HANGMAN = hangman_import()
-
-for value in HANGMAN.values():
-    print(value)
