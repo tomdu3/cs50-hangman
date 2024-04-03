@@ -29,3 +29,18 @@ def hangman_import():
     return {key:value for key, value in hangman.items()}
 
 HANGMAN = hangman_import()
+
+def print_hangman_word(word, letters=[]):
+    '''
+    Prints a word letter by letter. If a letter in the word is
+    not yet guessed, it prints an underscore character
+    '''
+
+    for letter in word:
+        if letter in letters:
+            print(letter, end='')
+        else:
+            print('_', end='')
+    print()
+
+print_hangman_word('hello', ['h', 'l'])
