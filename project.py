@@ -43,3 +43,10 @@ def print_hangman_word(word, letters=[]):
             print('_', end='')
     print()
 
+
+def main():
+    pass
+
+
+if __name__ == '__main__':
+    main()
