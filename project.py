@@ -56,5 +56,16 @@ def main():
     wrong_letters = []
     print_hangman_word(word, correct_letters)
 
+    while lives > 0 and len(correct_letters) != len(letters_in_word):
+        # verification of the user's input
+        while True:
+            guess_letter = input('guess a letter: ').lower().strip()
+            if not guess_letter.isalpha():
+                print('Invalid input! Only the letters are permitted!')
+            elif len(guess_letter) != 1:
+                print('Invalid input! The guess should be only one letter!')
+            else:
+                break
+
 if __name__ == '__main__':
     main()
