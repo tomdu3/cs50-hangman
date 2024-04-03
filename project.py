@@ -44,38 +44,21 @@ def print_hangman_word(word, letters=[]):
     print()
 
 def game_over(lives):
+
     if lives == 0:
-        print('''
- _____                        _____                
-|  __ \\                      |  _  |               
-| |  \\/ __ _ _ __ ___   ___  | | | |_   _____ _ __ 
-| | __ / _` | '_ ` _ \\ / _ \\ | | | \\ \\ / / _ \\ '__|
-| |_\\ \\ (_| | | | | | |  __/ \\ \\_/ /\\ V /  __/ |   
- \\____/\\__,_|_| |_| |_|\\___|  \\___/  \\_/ \\___|_|   
-                                                   
-                                                   ''')
-        print("You've lost...")
+        filename = 'lose.txt'
     else:
-        print('''
+        filename = 'win.txt'
 
-__   __                     _       _ _ _ 
-\ \ / /__  _   _  __      _(_)_ __ | | | |
- \ V / _ \| | | | \ \ /\ / / | '_ \| | | |
-  | | (_) | |_| |  \ V  V /| | | | |_|_|_|
-  |_|\___/ \__,_|   \_/\_/ |_|_| |_(_|_|_)
+    with open(filename) as file:
+        output = file.read()
 
-                                          
-                                          ''')
-
+    print(output)
 
 def main():
     word = random.choice(WORDS)
-    # print(word)  # test
-    print_hangman_word(word)
-
     lives = 7
     letters_in_word = {letter for letter in word}
-    print(letters_in_word)  # test
     correct_letters = []
     wrong_letters = []
     print_hangman_word(word, correct_letters)
