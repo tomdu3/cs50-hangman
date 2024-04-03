@@ -1,6 +1,6 @@
-# Hangman Game in Python
+# Hangman Game
 
-#### Video Demo: [URL HERE]
+#### Video Demo: [https://youtu.be/9O5YFeWEpbk](https://youtu.be/9O5YFeWEpbk)
 
 #### Description:
 This project is a simple implementation of the classic game "Hangman" in Python. The game is designed to be run in the command line and offers a fun and interactive way to guess words letter by letter.
@@ -34,6 +34,8 @@ In this version of Hangman, a player tries to guess a word by suggesting letters
 - `project.py`: Contains the main game logic and functions.
 - `words.txt`: A text file containing possible words to guess.
 - `hangman.txt`: A text file containing the ASCII art for the hangman stages.
+- `lose.txt`: A text file containing the ASCII art for the game over - lose.
+- `win.txt`: A text file containing the ASCII art for the game over - win.
 - `test_project.py`: Contains tests for key functions of the game, executable with pytest.
 
 
@@ -42,9 +44,9 @@ In this version of Hangman, a player tries to guess a word by suggesting letters
 This project includes unit tests for the `words_import`, `hangman_import`, and `print_hangman_word` functions, ensuring that key components of the game behave as expected under various conditions. Here's a brief overview of what each test verifies:
 
 - `test_words_import`: Checks if the `words_import` function successfully reads from the `words.txt` file, returns a list, and ensures that the list contains strings representing words. This test ensures that the game has a valid word list to choose from.
-  
+
 - `test_hangman_import`: Ensures that the `hangman_import` function properly loads the ASCII art representations of the hangman's stages from `hangman.txt` into a dictionary, validating the structure and content of this dictionary. This is crucial for visually representing the game's progress.
-  
+
 - `test_print_hangman_word`: Verifies the `print_hangman_word` function's ability to correctly print the current state of the word being guessed, with letters either revealed or represented as underscores based on the player's guesses. This test captures and examines the function's output to ensure it matches the expected format.
 
 To run these tests, ensure you have `pytest` installed in your environment:
@@ -63,6 +65,7 @@ Pytest will automatically discover and run the tests defined in test_project.py,
 
 
 ### Author
+
 - Name: Tomislav Dukez
 - GitHub: tomdu3
 - EdX: tomdu3
