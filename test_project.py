@@ -1,5 +1,7 @@
 import pytest
-from project import words_import, hangman_import
+from project import words_import, hangman_import, print_hangman_word
+import sys
+from io import StringIO
 
 # Test for words_import function
 def test_words_import():
@@ -15,3 +17,14 @@ def test_hangman_import():
     assert all(isinstance(key, int) for key in hangman.keys()), "All keys should be integers"
     assert all(isinstance(value, str) for value in hangman.values()), "All values should be strings"
     assert len(hangman) > 0, "The dictionary should not be empty"
+
+# Test for print_hangman_word function
+def test_print_hangman_word():
+    word = "python"
+    letters = ['p', 't', 'o']
+    # Capture the output
+    capturedOutput = StringIO()
+    sys.stdout = capturedOutput
+    print_hangman_word(word, letters)
+    sys.stdout = sys.__stdout__  # Reset redirect
+    assert capturedOutput.getvalue().strip() == 'p_t_o_', "The function should print the word with underscores for unguessed letters"

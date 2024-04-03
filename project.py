@@ -43,4 +43,3 @@ def print_hangman_word(word, letters=[]):
             print('_', end='')
     print()
 
-print_hangman_word('hello', ['h', 'l'])
