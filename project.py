@@ -45,8 +45,16 @@ def print_hangman_word(word, letters=[]):
 
 
 def main():
-    pass
+    word = random.choice(WORDS)
+    # print(word)  # test
+    print_hangman_word(word)
 
+    lives = 7
+    letters_in_word = {letter for letter in word}
+    print(letters_in_word)  # test
+    correct_letters = []
+    wrong_letters = []
+    print_hangman_word(word, correct_letters)
 
 if __name__ == '__main__':
     main()
